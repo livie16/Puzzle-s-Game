@@ -1,0 +1,89 @@
+<html>
+
+<head>
+  <title>Puzzle's Game</title>
+  <style>
+    button:hover {
+      background-color: #bca0dc !important;
+    }
+
+    button:active {
+      background-color: #9969d0 !important;
+    }
+
+    #controls button {
+      font-size: 24px;
+      border: none;
+      border-radius: 8px;
+      background-color: #bca0dc;
+      color: white;
+      cursor: pointer;
+    }
+
+    #controls button:active {
+      background-color: #9969d0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="homeScreen" style="position: absolute; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); display: flex; align-items: center; justify-content: center; flex-direction: column; z-index: 20;">
+    <h1 style="color: white; font-size: 48px; margin-bottom: 20px;">Puzzle's Game</h1>
+    <button id="startGameButton" style="padding: 20px 40px; font-size: 24px; color: white; background-color: #4caf50; border: none; border-radius: 5px; cursor: pointer;">
+      Start Game
+    </button>
+  </div>
+  <button id="pauseButton" style="position: absolute; top: 10px; right: 10px; padding: 10px; font-size: 16px; background-color: #f1c40f; color: black; border: none; border-radius: 5px; cursor: pointer; z-index: 15;">
+  Settings
+</button>
+
+  <div id="pauseScreen" style="position: absolute; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: none; align-items: center; justify-content: center; flex-direction: column; z-index: 30;">
+    <h2 style="color: white; font-size: 36px; margin-bottom: 20px;">Settings</h2>
+    <button id="resumeButton" style="padding: 10px 20px; font-size: 20px; margin: 10px; background-color: #4caf50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Resume
+    </button>
+    <button id="restartButton" style="padding: 10px 20px; font-size: 20px; margin: 10px; background-color: #2196f3; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Restart
+    </button>
+    <button id="homeButton" style="padding: 10px 20px; font-size: 20px; margin: 10px; background-color: #f44336; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Home
+    </button>
+  </div>
+  
+  <center>
+    <canvas id="canvas" width="400" height="800"> </canvas>
+    <canvas id="nextShapeCanvas" width="200" height="200" style="position: absolute; top: 10">
+    </canvas>
+
+    <canvas id="scoreCanvas" width="200" height="200" style="position: absolute; top: 220">
+    </canvas>
+
+    <button style="
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background-color: gray;
+        border: 0px;
+      " onClick="resetVars()">
+      <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
+        <use class="ytp-svg-shadow" xlink:href="#ytp-id-54"></use>
+        <path class="ytp-svg-fill" fill="#ffffff"
+          d="M 18,11 V 7 l -5,5 5,5 v -4 c 3.3,0 6,2.7 6,6 0,3.3 -2.7,6 -6,6 -3.3,0 -6,-2.7 -6,-6 h -2 c 0,4.4 3.6,8 8,8 4.4,0 8,-3.6 8,-8 0,-4.4 -3.6,-8 -8,-8 z"
+          id="ytp-id-54"></path>
+      </svg>
+    </button>
+    <img id="image" src="rotations.png" style="display: none" />
+
+    <div id="controls" style="display: flex; justify-content: center; margin-top: 20px;">
+      <button id="left" style="margin: 5px; width: 50px; height: 50px;">←</button>
+      <button id="rotate" style="margin: 5px; width: 50px; height: 50px;">⟳</button>
+      <button id="right" style="margin: 5px; width: 50px; height: 50px;">→</button>
+      <button id="down" style="margin: 5px; width: 50px; height: 50px;">↓</button>
+    </div>
+
+  </center>
+
+  <script src="tetris.js"></script>
+</body>
+
+</html>
